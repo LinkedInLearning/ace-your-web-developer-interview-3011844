@@ -1,0 +1,37 @@
+/*
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+*/
+
+#swatch-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+
+.swatch-wrapper {
+  border-radius: 4px;
+  max-width: 200px;
+  transition: box-shadow 0.1s linear;
+  cursor: pointer;
+}
+
+.swatch-wrapper:hover,
+.swatch-wrapper:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.color-wrapper {
+  height: 120px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.metadata-wrapper {
+  background: #f2f2f2;
+  border-radius: 0px 0px 4px 4px;
+  padding: 16px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
