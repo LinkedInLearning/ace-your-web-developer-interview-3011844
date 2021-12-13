@@ -1,10 +1,9 @@
 function binaryToDecimal(binary) {
   const binaryRegex = new RegExp(/[01]+$/);
   if (!binaryRegex.test(binary)) {
-    return `${binary} is not a valid binary string.`;
+    return `${binary} is not a valid binary string`;
   }
 
-  // const reversedBinaryArray = binary.split("").reverse();
   let decimalTotal = 0;
   let power = binary.length - 1;
   let index = 0;
@@ -18,11 +17,6 @@ function binaryToDecimal(binary) {
     index++;
   }
 
-  // for (let power = 0; power < reversedBinaryArray.length; power++) {
-  //   if (reversedBinaryArray[power] === "1") {
-  //     decimalTotal += Math.pow(2, power);
-  //   }
-  // }
   return decimalTotal;
 }
 

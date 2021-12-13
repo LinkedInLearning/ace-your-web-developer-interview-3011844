@@ -1,3 +1,8 @@
+/*
+  Punctuation to remove
+  [!@#$%^&*()_+={}.,:'"/~`;[\[\]]
+*/
+
 function blogify(title) {}
 
 const blogs = [
@@ -8,4 +13,4 @@ const blogs = [
   'This., -/ is #! an $ % ^ & * example ;: {} of a = -_ string with `~)() punctuation"',
 ];
 
-blogs.forEach((blog) => blogify(blog));
+blogs.forEach((blog) => console.log(blogify(blog)));

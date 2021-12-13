@@ -7,8 +7,8 @@
 */
 
 .container {
-  border: 2px solid black;
   display: flex;
+  border: 2px solid black;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 16px;
@@ -56,7 +56,7 @@
 
 @media (min-width: 1000px) {
   .container {
-    max-width: 360px;
+    min-width: 360px;
   }
 
   .block {

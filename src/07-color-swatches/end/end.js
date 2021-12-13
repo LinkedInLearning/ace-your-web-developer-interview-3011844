@@ -20,9 +20,9 @@ const swatchData = [
 function constructSwatches(swatchData) {
   const swatchContainer = document.querySelector("#swatch-container");
 
-  swatchData.forEach((swatch) =>
-    swatchContainer.appendChild(generateSwatch(swatch))
-  );
+  swatchData.forEach((swatch) => {
+    swatchContainer.appendChild(generateSwatch(swatch));
+  });
 }
 
 function generateSwatch(swatch) {

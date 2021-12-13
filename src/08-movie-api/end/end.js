@@ -1,7 +1,7 @@
 /*
-  URL: https://imdb8.p.rapidapi.com/title/find?q=Star%20Wars"
-  x-rapidapi-host: "imdb8.p.rapidapi.com"
-  x-rapidapi-key: "7dc4683476msh81675cd0e90bd2bp17842ejsn3357aee41f0a"
+  URL: "https://imdb8.p.rapidapi.com/title/find?q=Star%20Wars"
+  "x-rapidapi-host": "imdb8.p.rapidapi.com"
+  "x-rapidapi-key": "7dc4683476msh81675cd0e90bd2bp17842ejsn3357aee41f0a"
 */
 
 fetch("https://imdb8.p.rapidapi.com/title/find?q=Star%20Wars", {
@@ -13,7 +13,7 @@ fetch("https://imdb8.p.rapidapi.com/title/find?q=Star%20Wars", {
 })
   .then(async (response) => {
     const { results } = await response.json();
-    let formattedResults = [];
+    const formattedResults = [];
     let currentIndex = 0;
 
     while (formattedResults.length < 5) {
@@ -22,7 +22,8 @@ fetch("https://imdb8.p.rapidapi.com/title/find?q=Star%20Wars", {
         currentIndex++;
         continue;
       }
-      let {
+
+      const {
         title,
         year,
         image: { url },
@@ -34,18 +35,17 @@ fetch("https://imdb8.p.rapidapi.com/title/find?q=Star%20Wars", {
       });
       currentIndex++;
     }
-
     makeMoviePoster(formattedResults);
   })
   .catch((err) => {
-    console.error(err);
+    throw new Error(err);
   });
 
 function makeMoviePoster(movies) {
   const posterContainer = document.querySelector("#poster-container");
   movies.forEach(({ title, year, image }) => {
     const movieContainer = document.createElement("div");
-    movieContainer.classList.add("movieContainer");
+    movieContainer.classList.add("movie-container");
 
     const poster = document.createElement("img");
     poster.src = image;
